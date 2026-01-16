@@ -1,0 +1,40 @@
+{# templates/components/_project_card.html.twig #}
+<div class="col-md-6 col-lg-4">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+            {% if badge is defined and badge %}
+                <span class="badge mb-2 {{ badgeClass|default('bg-secondary') }}">
+                    {{ badge }}
+                </span>
+            {% endif %}
+
+            <h3 class="h5 card-title">
+                {{ title }}
+            </h3>
+
+            {% if context is defined and context %}
+                <p class="card-text small text-muted mb-2">
+                    {{ context }}
+                </p>
+            {% endif %}
+
+            {% if solution is defined and solution %}
+                <p class="card-text mb-2">
+                    <strong>Solution :</strong> {{ solution }}
+                </p>
+            {% endif %}
+
+            {% if impact is defined and impact %}
+                <p class="card-text mb-2">
+                    <strong>Impact :</strong> {{ impact }}
+                </p>
+            {% endif %}
+
+            {% if highlight is defined and highlight %}
+                <p class="card-text small text-success mt-auto">
+                    {{ highlight }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>

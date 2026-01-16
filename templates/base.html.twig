@@ -1,0 +1,69 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Portfolio développeur{% endblock %}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Portfolio de développeur RPA, PHP et Symfony.">
+
+        {% block stylesheets %}
+            {{ importmap('app') }}
+        {% endblock %}
+    </head>
+
+    <body class="bg-light text-dark d-flex flex-column min-vh-100">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+                <div class="container">
+                    <a href="{{ path('app_home') }}" class="navbar-brand fw-bold">
+                        Jean-Christophe · Dev RPA & Symfony
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_home') }}">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_projects') }}">Projets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_skills') }}">Compétences</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_about') }}">À propos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary text-white ms-lg-3" href="{{ path('app_contact') }}">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-fill">
+            <div class="container py-4">
+                {% block body %}{% endblock %}
+            </div>
+        </main>
+
+        <footer class="bg-white border-top py-3 mt-4">
+            <div class="container text-center text-muted small">
+                &copy; {{ "now"|date("Y") }} · Portfolio Symfony · Tous droits réservés.
+            </div>
+        </footer>
+
+        {% block javascripts %}
+            {{ importmap('app') }}
+        {% endblock %}
+    </body>
+</html>

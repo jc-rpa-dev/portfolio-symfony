@@ -1,0 +1,3 @@
+# Exemple de surcharge de message
+"This value should not be blank.": "Ce champ ne peut pas être vide."
+"This value is too short. It should have {{ limit }} characters or more.": "Ce texte est trop court (minimum {{ limit }} caractères)."

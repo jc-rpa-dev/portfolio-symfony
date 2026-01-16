@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact - Portfolio{% endblock %}
+
+{% block body %}
+<section class="mb-4">
+    <h1 class="mb-3">Me contacter</h1>
+    <p class="text-muted">
+        Une question, un projet ou une mission en tête&nbsp;? Laissez-moi un message via ce formulaire.
+    </p>
+</section>
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }} mb-3">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+<section class="row">
+    <div class="col-lg-7 mb-4">
+        <div class="bg-white border rounded-3 p-4 shadow-sm">
+            {{ form_start(contactForm) }}
+                <div class="mb-3">
+                    {{ form_label(contactForm.fullname) }}
+                    {{ form_widget(contactForm.fullname, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.fullname) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(contactForm.email) }}
+                    {{ form_widget(contactForm.email, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.email) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(contactForm.subject) }}
+                    {{ form_widget(contactForm.subject, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.subject) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(contactForm.message) }}
+                    {{ form_widget(contactForm.message, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(contactForm.message) }}
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Envoyer
+                </button>
+            {{ form_end(contactForm) }}
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="bg-white border rounded-3 p-4 h-100">
+            <h2 class="h5 mb-3">Coordonnées</h2>
+            <ul class="list-unstyled mb-3">
+                <li><strong>Localisation :</strong> Saint-Jean-de-Braye (Centre-Val de Loire)</li>
+                <li><strong>Profil :</strong> Développeur RPA / PHP / Symfony</li>
+            </ul>
+            <h3 class="h6 text-uppercase text-muted mb-2">Liens</h3>
+            <ul class="list-unstyled mb-0">
+                <li><a href="#" target="_blank">GitHub</a></li>
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

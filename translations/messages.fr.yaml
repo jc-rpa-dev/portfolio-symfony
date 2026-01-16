@@ -1,0 +1,13 @@
+# traductions génériques (exemple)
+site:
+  title: "Portfolio développeur"
+  hero:
+    cta_projects: "Voir mes projets"
+    cta_contact: "Me contacter"
+
+form:
+  contact:
+    fullname: "Nom complet"
+    email: "Adresse e-mail"
+    subject: "Sujet"
+    message: "Message"

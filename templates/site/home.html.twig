@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Portfolio développeur{% endblock %}
+
+{% block body %}
+<section class="py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-7">
+            <p class="text-primary fw-semibold mb-2">Développeur RPA & Symfony</p>
+            <h1 class="display-5 fw-bold mb-3">
+                J’automatise vos processus et développe des applications web fiables.
+            </h1>
+            <p class="lead mb-4">
+                Spécialisé en RPA, backend PHP/Symfony et intégration d’APIs,
+                je conçois des solutions qui réduisent les tâches manuelles
+                et sécurisent vos flux métiers.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="{{ path('app_projects') }}" class="btn btn-primary btn-lg">
+                    Voir mes projets
+                </a>
+                <a href="{{ path('app_contact') }}" class="btn btn-outline-secondary btn-lg">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-5 mt-4 mt-lg-0">
+            <div class="p-4 bg-white border rounded-3 shadow-sm">
+                <h2 class="h5 mb-3">Domaines d’intervention</h2>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2">• Automatisation RPA (processus métier, tâches répétitives).</li>
+                    <li class="mb-2">• Développement backend PHP/Symfony orienté qualité.</li>
+                    <li class="mb-2">• Intégration d’APIs, scripts d’outillage et monitoring.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-4 border-top">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <h2 class="h5">Automatisation pragmatique</h2>
+            <p>Focus sur le ROI : réduire les erreurs humaines, accélérer les traitements, sécuriser les workflows.</p>
+        </div>
+        <div class="col-md-4">
+            <h2 class="h5">Code maintenable</h2>
+            <p>Symfony 7.4, bonnes pratiques, tests et configuration propre pour faciliter l’évolution du projet.</p>
+        </div>
+        <div class="col-md-4">
+            <h2 class="h5">Tech mindset</h2>
+            <p>Veille sur les tendances (IA, DevOps, outils dev) pour proposer des solutions modernes et réalistes.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

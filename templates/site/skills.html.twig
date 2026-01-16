@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compétences - Portfolio{% endblock %}
+
+{% block body %}
+<section class="mb-4">
+    <h1 class="mb-3">Compétences</h1>
+    <p class="text-muted">
+        Un mélange de RPA, développement backend PHP/Symfony, intégration d’APIs et exploration de l’IA (RAG).
+    </p>
+</section>
+
+<section class="mb-5">
+    <h2 class="h4 mb-3">RPA & automatisation</h2>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Outils & pratiques</h3>
+                <ul class="mb-0">
+                    <li>UiPath : conception de workflows, orchestrations, gestion des erreurs.</li>
+                    <li>Automatisation de traitements de masse (ex. remboursements, dossiers clients).</li>
+                    <li>Monitoring, logs et supervision des robots.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Ce que ça apporte</h3>
+                <ul class="mb-0">
+                    <li>Réduction forte des tâches manuelles et des erreurs de saisie.</li>
+                    <li>Accélération des délais de traitement (jusqu’à J+1 sur certains processus).</li>
+                    <li>Standardisation des processus métier et meilleure traçabilité.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <h2 class="h4 mb-3">Backend PHP / Symfony</h2>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Stack technique</h3>
+                <ul class="mb-0">
+                    <li>PHP 8.x, Symfony 7.4 (controllers, routing, services, DI).</li>
+                    <li>Doctrine ORM, migrations, conception de schémas relationnels.</li>
+                    <li>Twig, AssetMapper, intégration de composants front (Bootstrap, JS).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Qualité & bonnes pratiques</h3>
+                <ul class="mb-0">
+                    <li>Organisation propre des contrôleurs et templates.</li>
+                    <li>Validation des données, sécurité (CSRF, accès, configuration).</li>
+                    <li>Tests avec PHPUnit, configuration par environnement.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <h2 class="h4 mb-3">IA, RAG & outils data</h2>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Technos & concepts</h3>
+                <ul class="mb-0">
+                    <li>Utilisation de modèles LLM (Mistral, etc.).</li>
+                    <li>Mise en place de RAG : chargement, indexation et récupération de contexte.</li>
+                    <li>Intégration IA dans des applis web (Python/Django, APIs).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Cas d’usage</h3>
+                <ul class="mb-0">
+                    <li>Assistants métiers contextuels à partir de données locales.</li>
+                    <li>Prototypage rapide d’interfaces IA pour des besoins internes.</li>
+                    <li>Veille sur les usages IA pour l’automatisation et la productivité.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="h4 mb-3">Outils & environnement</h2>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Outils dev & workflow</h3>
+                <ul class="mb-0">
+                    <li>Git, GitHub / GitLab, revues de code.</li>
+                    <li>Environnements Linux, Apache, PHP-FPM.</li>
+                    <li>CI/CD basique, scripts d’automatisation (shell, Python, etc.).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 bg-white border rounded-3 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">Soft skills techniques</h3>
+                <ul class="mb-0">
+                    <li>Capacité à analyser un processus métier et le traduire en automatisation.</li>
+                    <li>Communication avec les équipes non techniques pour cadrer le besoin.</li>
+                    <li>Veille sur les tendances technologiques (RPA, IA, outils dev).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

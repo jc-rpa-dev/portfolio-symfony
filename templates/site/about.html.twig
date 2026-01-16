@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos - Portfolio{% endblock %}
+
+{% block body %}
+<section class="mb-4">
+    <h1 class="mb-3">À propos</h1>
+    <p class="text-muted">
+        Développeur RPA et backend PHP/Symfony avec près de 7 ans d’expérience,
+        aujourd’hui en CDI chez Infotel Conseil et actuellement en mission RPA.
+    </p>
+</section>
+
+<section class="mb-5">
+    <h2 class="h4 mb-3">Qui je suis</h2>
+    <div class="row g-4">
+        <div class="col-md-8">
+            <div class="bg-white border rounded-3 p-4 h-100">
+                <p class="mb-3">
+                    Depuis plusieurs années, j’accompagne les équipes métiers dans
+                    l’automatisation de leurs processus et le développement d’applications
+                    backend en PHP/Symfony. Mon objectif : rendre les outils plus fiables,
+                    plus rapides et plus agréables à utiliser au quotidien.
+                </p>
+                <p class="mb-0">
+                    En parallèle de mon activité chez Infotel Conseil, je m’intéresse
+                    de près aux usages de l’IA (RAG, LLMs) et à la façon de les intégrer
+                    de manière pragmatique dans des applications existantes.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-white border rounded-3 p-4 h-100">
+                <h3 class="h6 text-uppercase text-muted mb-2">En résumé</h3>
+                <ul class="list-unstyled mb-0">
+                    <li>📍 Basé à Saint-Jean-de-Braye (Centre-Val de Loire).</li>
+                    <li>🏢 CDI chez Infotel Conseil, mission RPA.</li>
+                    <li>🧩 RPA · PHP · Symfony · IA (RAG).</li>
+                    <li>🎮 Passionné de jeux vidéo, musique et JDR papier.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <h2 class="h4 mb-3">Parcours & expériences</h2>
+    <div class="bg-white border rounded-3 p-4">
+        <ul class="mb-0">
+            <li class="mb-2">
+                Près de <strong>7 ans d’expérience</strong> en développement et automatisation,
+                avec un focus récent sur des projets RPA à forte valeur ajoutée.
+            </li>
+            <li class="mb-2">
+                Expérience en <strong>RPA</strong> avec UiPath sur des processus métiers
+                critiques (par exemple : automatisation des remboursements de prestations
+                de santé, avec des gains importants en temps de traitement et satisfaction client).
+            </li>
+            <li class="mb-2">
+                Développement de solutions backend en <strong>PHP/Symfony</strong> :
+                APIs, sites vitrines, outils internes et automatisations autour des systèmes existants.
+            </li>
+            <li class="mb-0">
+                Projets personnels autour de l’<strong>IA</strong> (intégration de modèles
+                type Mistral, mise en place de RAG dans des applications web pour enrichir
+                les réponses avec du contexte local).
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2 class="h4 mb-3">Ce que je recherche</h2>
+    <div class="bg-white border rounded-3 p-4">
+        <p class="mb-3">
+            À moyen terme, je suis particulièrement intéressé par les projets qui combinent
+            <strong>automatisation</strong> (RPA, scripts, backend) et <strong>valeur métier</strong>,
+            ainsi que par les usages concrets de l’IA dans les applications professionnelles.
+        </p>
+        <p class="mb-0">
+            Si vous avez un processus à automatiser, une application à faire évoluer
+            ou un besoin autour de l’IA/RAG, n’hésitez pas à me contacter via la page
+            <a href="{{ path('app_contact') }}">Contact</a>.
+        </p>
+    </div>
+</section>
+{% endblock %}
