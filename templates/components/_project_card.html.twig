@@ -1,39 +1,47 @@
-<div class="col-md-6 col-lg-4">
-    <div class="card h-100 shadow-sm">
+<div class="col">
+    <article class="card h-100 border border-secondary bg-dark shadow-sm project-card">
         <div class="card-body d-flex flex-column">
             {% if badge is defined and badge %}
-                <span class="badge mb-2 {{ badgeClass|default('bg-secondary') }}">
+                <span class="badge mb-3 {{ badgeClass|default('bg-secondary') }}">
                     {{ badge }}
                 </span>
             {% endif %}
 
-            <h3 class="h5 card-title">
-                {{ title }}
+            <h3 class="h5 card-title mb-2">
+                {% if project.slug %}
+                    <a href="{{ path('app_project_show', { slug: project.slug }) }}"
+                        class="stretched-link text-decoration-none text-reset">
+                        {{ project.title }}
+                    </a>
+                {% else %}
+                    {{ project.title }}
+                {% endif %}
             </h3>
 
-            {% if context is defined and context %}
-                <p class="card-text small text-muted mb-2">
-                    {{ context }}
+
+            {% if project.context %}
+                <p class="card-text small mb-3">
+                    {{ project.context }}
                 </p>
             {% endif %}
 
-            {% if solution is defined and solution %}
+            {% if project.solution %}
                 <p class="card-text mb-2">
-                    <strong>Solution :</strong> {{ solution }}
+                    <span class="fw-semibold">Solution :</span> {{ project.solution }}
                 </p>
             {% endif %}
 
-            {% if impact is defined and impact %}
-                <p class="card-text mb-2">
-                    <strong>Impact :</strong> {{ impact }}
+            {% if project.impact %}
+                <p class="card-text mb-3">
+                    <span class="fw-semibold">Impact :</span> {{ project.impact }}
                 </p>
             {% endif %}
 
-            {% if highlight is defined and highlight %}
+            {% if project.highlight %}
                 <p class="card-text small text-success mt-auto">
-                    {{ highlight }}
+                    {{ project.highlight }}
                 </p>
             {% endif %}
         </div>
-    </div>
+    </article>
 </div>

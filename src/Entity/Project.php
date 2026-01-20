@@ -38,6 +38,28 @@ class Project
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
+    #[ORM\Column(length: 180, unique: true, nullable: true)]
+    private ?string $slug = null;
+
+    private function slugify(string $value): string
+    {
+    $value = iconv('UTF-8', 'ASCII//TRANSLIT', $value);
+    $value = preg_replace('~[^\\pL\\d]+~u', '-', $value);
+    $value = trim($value, '-');
+    $value = strtolower($value);
+    return $value ?: 'projet';
+    }
+
+    public function setTitle(string $title): static
+    {
+    $this->title = $title;
+
+    if (null === $this->slug) {
+        $this->slug = $this->slugify($title);
+    }
+
+    return $this;
+    }
 
     public function getId(): ?int
     {
@@ -47,13 +69,6 @@ class Project
     public function getTitle(): ?string
     {
         return $this->title;
-    }
-
-    public function setTitle(string $title): static
-    {
-        $this->title = $title;
-
-        return $this;
     }
 
     public function getContext(): ?string
@@ -126,6 +141,18 @@ class Project
     $this->category = $category;
 
     return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
+
+        return $this;
     }
 
 }

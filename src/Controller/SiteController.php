@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Form\ContactType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\ProjectRepository;
+use App\Entity\Project;
 
 
 class SiteController extends AbstractController
@@ -28,6 +29,15 @@ class SiteController extends AbstractController
         'projects' => $projects,
     ]);
     }
+
+    #[Route('/projets/{slug}', name: 'app_project_show')]
+    public function projectShow(Project $project): Response
+    {
+        return $this->render('site/project_show.html.twig', [
+            'project' => $project,
+    ]);
+    }
+
 
     #[Route('/competences', name: 'app_skills')]
     public function skills(): Response

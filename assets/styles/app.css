@@ -62,4 +62,34 @@ a:hover {
 /* Sections */
 section + section {
     margin-top: 2rem;
+
+
+}.project-card {
+    border-radius: 1rem;
+    background: radial-gradient(circle at top left, #020617, #020617);
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
 }
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    border-color: #334155;
+}
+
+.project-card .badge {
+    border-radius: 999px;
+}
+.project-card {
+    color: #e5e7eb; /* texte principal très lisible */
+}
+
+.project-card .card-text,
+.project-card .card-title {
+    color: #e5e7eb;
+}
+
+.project-card .text-secondary,
+.project-card .text-muted {
+    color: #9ca3af !important; /* gris plus clair que les muted Bootstrap */
+}
+

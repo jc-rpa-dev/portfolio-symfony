@@ -1,0 +1,89 @@
+{# templates/site/project_show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ project.title }} - Projet{% endblock %}
+
+{% block body %}
+<section class="mb-4">
+    <a href="{{ path('app_projects') }}" class="text-secondary small text-decoration-none">
+        ← Retour aux projets
+    </a>
+</section>
+
+<section class="mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+        <div>
+            <h1 class="mb-2">{{ project.title }}</h1>
+
+            {% if project.category %}
+                <span class="badge bg-secondary rounded-pill">
+                    {{ project.category.name }}
+                </span>
+            {% endif %}
+        </div>
+
+        <div class="text-end small text-secondary">
+            {% if project.createdAt %}
+                <div>Année : {{ project.createdAt|date('Y') }}</div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <article class="p-4 rounded-4 border border-secondary bg-dark">
+                {% if project.context %}
+                    <h2 class="h5 mb-2">Contexte</h2>
+                    <p class="text-secondary mb-4">
+                        {{ project.context }}
+                    </p>
+                {% endif %}
+
+                {% if project.solution %}
+                    <h2 class="h5 mb-2">Solution mise en place</h2>
+                    <p class="mb-4">
+                        {{ project.solution }}
+                    </p>
+                {% endif %}
+
+                {% if project.impact %}
+                    <h2 class="h5 mb-2">Impact / Résultats</h2>
+                    <p class="mb-0">
+                        {{ project.impact }}
+                    </p>
+                {% endif %}
+            </article>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="p-4 rounded-4 border border-secondary bg-dark mb-3">
+                <h2 class="h6 mb-3">En résumé</h2>
+
+                {% if project.highlight %}
+                    <p class="small text-success mb-3">
+                        {{ project.highlight }}
+                    </p>
+                {% endif %}
+
+                <ul class="small text-secondary mb-0">
+                    <li>Catégorie : {{ project.category.name ?? 'Projet' }}</li>
+                    <li>Type : RPA / Symfony / IA selon le contexte.</li>
+                </ul>
+            </div>
+
+            <div class="p-4 rounded-4 border border-secondary bg-dark">
+                <h2 class="h6 mb-3">Vous avez un besoin similaire ?</h2>
+                <p class="small text-secondary">
+                    Discutons de votre contexte (RPA, backend Symfony ou IA) et voyons
+                    comment reproduire ce type de résultats chez vous.
+                </p>
+                <a href="{{ path('app_contact') }}" class="btn btn-primary btn-sm w-100">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

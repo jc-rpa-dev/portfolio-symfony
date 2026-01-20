@@ -4,34 +4,44 @@
 
 {% block body %}
 <section class="mb-4">
-    <h1 class="mb-3">Projets</h1>
-    <p class="text-muted">
-        Quelques projets représentatifs en RPA, développement web et IA (RAG).
-    </p>
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div>
+            <h1 class="mb-2">Projets</h1>
+            <p class="text-secondary mb-0">
+                Une sélection de projets en RPA, backend Symfony et intégration d’IA.
+            </p>
+        </div>
+        <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-sm">
+            Discuter d’un projet similaire
+        </a>
+    </div>
 </section>
 
 <section class="mb-5">
-    <div class="row g-4">
-        {% for project in projects %}
-            {% set badge = project.category.name %}
-            {% set badgeClass =
-                project.category.slug == 'rpa' ? 'bg-primary' :
-                (project.category.slug == 'symfony-backend' ? 'bg-secondary' :
-                (project.category.slug == 'ia-rag' ? 'bg-warning text-dark' : 'bg-secondary'))
-            %}
+    {% if projects is not empty %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for project in projects %}
+                {% set badge = project.category.name %}
+                {% set badgeClass =
+                    project.category.slug == 'rpa' ? 'bg-primary' :
+                    (project.category.slug == 'symfony-backend' ? 'bg-info text-dark' :
+                    (project.category.slug == 'ia-rag' ? 'bg-warning text-dark' : 'bg-secondary'))
+                %}
 
-            {{ include('components/_project_card.html.twig', {
-                badge: badge,
-                badgeClass: badgeClass,
-                title: project.title,
-                context: project.context,
-                solution: project.solution,
-                impact: project.impact,
-                highlight: project.highlight
-            }) }}
-        {% else %}
-            <p class="text-muted">Aucun projet n’est encore enregistré.</p>
-        {% endfor %}
-    </div>
+                {{ include('components/_project_card.html.twig', {
+                    project: project,
+                    badge: badge,
+                    badgeClass: badgeClass,
+                    title: project.title,
+                    context: project.context,
+                    solution: project.solution,
+                    impact: project.impact,
+                    highlight: project.highlight
+                }) }}
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-secondary">Aucun projet n’est encore enregistré.</p>
+    {% endif %}
 </section>
 {% endblock %}
