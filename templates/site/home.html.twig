@@ -4,52 +4,80 @@
 
 {% block body %}
 <section class="py-5">
-    <div class="row align-items-center">
+    <div class="row align-items-center g-4">
         <div class="col-lg-7">
-            <p class="text-primary fw-semibold mb-2">Développeur RPA & Symfony</p>
+            <div class="mb-3">
+                <span class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2">
+                    Développeur RPA & Symfony
+                </span>
+            </div>
             <h1 class="display-5 fw-bold mb-3">
-                J’automatise vos processus et développe des applications web fiables.
+                Automatiser les processus. <br>
+                Construire des backends fiables.
             </h1>
-            <p class="lead mb-4">
-                Spécialisé en RPA, backend PHP/Symfony et intégration d’APIs,
-                je conçois des solutions qui réduisent les tâches manuelles
-                et sécurisent vos flux métiers.
+            <p class="lead text-secondary mb-4">
+                Près de 7 ans d’expérience en RPA et développement PHP/Symfony,
+                aujourd’hui en mission RPA chez Infotel Conseil. Je conçois des
+                solutions qui réduisent les tâches manuelles et sécurisent les flux métiers.
             </p>
             <div class="d-flex flex-wrap gap-2">
                 <a href="{{ path('app_projects') }}" class="btn btn-primary btn-lg">
                     Voir mes projets
                 </a>
-                <a href="{{ path('app_contact') }}" class="btn btn-outline-secondary btn-lg">
+                <a href="{{ path('app_contact') }}" class="btn btn-outline-light btn-lg">
                     Me contacter
                 </a>
             </div>
         </div>
-        <div class="col-lg-5 mt-4 mt-lg-0">
-            <div class="p-4 bg-white border rounded-3 shadow-sm">
+
+        <div class="col-lg-5">
+            <div class="p-4 rounded-4 border border-secondary bg-gradient"
+                 style="background: radial-gradient(circle at top, #0f172a, #020617);">
                 <h2 class="h5 mb-3">Domaines d’intervention</h2>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2">• Automatisation RPA (processus métier, tâches répétitives).</li>
-                    <li class="mb-2">• Développement backend PHP/Symfony orienté qualité.</li>
-                    <li class="mb-2">• Intégration d’APIs, scripts d’outillage et monitoring.</li>
+                <ul class="list-unstyled small mb-4 text-secondary">
+                    <li class="mb-2">• Automatisation RPA (UiPath) sur des processus métiers critiques.</li>
+                    <li class="mb-2">• Développement backend PHP/Symfony 7.4, APIs et outils internes.</li>
+                    <li class="mb-2">• Intégration d’IA (RAG, modèles Mistral) dans des applis web.</li>
                 </ul>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-secondary bg-opacity-25 text-secondary">RPA</span>
+                    <span class="badge bg-secondary bg-opacity-25 text-secondary">Symfony 7.4</span>
+                    <span class="badge bg-secondary bg-opacity-25 text-secondary">PostgreSQL</span>
+                    <span class="badge bg-secondary bg-opacity-25 text-secondary">IA / RAG</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-4 border-top">
+<section class="pt-4">
     <div class="row g-4">
         <div class="col-md-4">
-            <h2 class="h5">Automatisation pragmatique</h2>
-            <p>Focus sur le ROI : réduire les erreurs humaines, accélérer les traitements, sécuriser les workflows.</p>
+            <div class="p-4 rounded-3 border border-secondary bg-dark">
+                <h2 class="h5">Automatisation pragmatique</h2>
+                <p class="small text-secondary mb-0">
+                    Focus sur le ROI : réduire les erreurs humaines, accélérer les traitements
+                    et améliorer la satisfaction client grâce à la RPA.
+                </p>
+            </div>
         </div>
         <div class="col-md-4">
-            <h2 class="h5">Code maintenable</h2>
-            <p>Symfony 7.4, bonnes pratiques, tests et configuration propre pour faciliter l’évolution du projet.</p>
+            <div class="p-4 rounded-3 border border-secondary bg-dark">
+                <h2 class="h5">Code maintenable</h2>
+                <p class="small text-secondary mb-0">
+                    Symfony 7.4, bonnes pratiques, tests et configuration propre
+                    pour faciliter l’évolution du projet dans le temps.
+                </p>
+            </div>
         </div>
         <div class="col-md-4">
-            <h2 class="h5">Tech mindset</h2>
-            <p>Veille sur les tendances (IA, DevOps, outils dev) pour proposer des solutions modernes et réalistes.</p>
+            <div class="p-4 rounded-3 border border-secondary bg-dark">
+                <h2 class="h5">Curiosité technologique</h2>
+                <p class="small text-secondary mb-0">
+                    Veille continue sur la RPA, l’IA, l’automatisation et les outils dev
+                    pour proposer des solutions modernes et réalistes.
+                </p>
+            </div>
         </div>
     </div>
 </section>

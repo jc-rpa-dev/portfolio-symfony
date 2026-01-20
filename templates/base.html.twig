@@ -13,12 +13,12 @@
         {% endblock %}
     </head>
 
-    <body class="bg-light text-dark d-flex flex-column min-vh-100">
+    <body class="bg-dark text-light d-flex flex-column min-vh-100">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+            <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-secondary bg-gradient" style="background: radial-gradient(circle at top left, #1f2937, #020617);">
                 <div class="container">
-                    <a href="{{ path('app_home') }}" class="navbar-brand fw-bold">
-                        Jean-Christophe · Dev RPA & Symfony
+                    <a href="{{ path('app_home') }}" class="navbar-brand fw-semibold">
+                        jc-rpa-dev · Dev RPA & Symfony
                     </a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -28,16 +28,16 @@
                     <div class="collapse navbar-collapse" id="mainNav">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('app_home') }}">Accueil</a>
+                                <a class="nav-link {% if app.current_route == 'app_home' %}active{% endif %}" href="{{ path('app_home') }}">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('app_projects') }}">Projets</a>
+                                <a class="nav-link {% if app.current_route == 'app_projects' %}active{% endif %}" href="{{ path('app_projects') }}">Projets</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('app_skills') }}">Compétences</a>
+                                <a class="nav-link {% if app.current_route == 'app_skills' %}active{% endif %}" href="{{ path('app_skills') }}">Compétences</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('app_about') }}">À propos</a>
+                                <a class="nav-link {% if app.current_route == 'app_about' %}active{% endif %}" href="{{ path('app_about') }}">À propos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link btn btn-primary text-white ms-lg-3" href="{{ path('app_contact') }}">
@@ -56,11 +56,12 @@
             </div>
         </main>
 
-        <footer class="bg-white border-top py-3 mt-4">
-            <div class="container text-center text-muted small">
-                &copy; {{ "now"|date("Y") }} · Portfolio Symfony · Tous droits réservés.
+        <footer class="border-top border-secondary py-3 mt-4">
+            <div class="container text-center small text-white-50">
+                &copy; {{ "now"|date("Y") }} · jc-rpa-dev · Portfolio Symfony
             </div>
         </footer>
+
 
         {% block javascripts %}
             {{ importmap('app') }}
