@@ -11,47 +11,27 @@
 </section>
 
 <section class="mb-5">
-    <h2 class="h4 mb-3">Projets RPA</h2>
     <div class="row g-4">
-        {{ include('components/_project_card.html.twig', {
-            badge: 'RPA · UiPath',
-            badgeClass: 'bg-primary',
-            title: 'Automatisation des remboursements de médecine alternative',
-            context: "Contexte : demandes de remboursement saisies manuellement dans l’outil de gestion, à partir d’un outil de relation client.",
-            solution: "Mise en place d’un robot UiPath récupérant automatiquement les demandes dans l’outil de relation client, puis saisie des dossiers dans l’outil de gestion avec contrôles et logs.",
-            impact: "Remboursement des prestations dès le lendemain, forte hausse de la satisfaction client.",
-            highlight: "ROI estimé : ~20 ETP économisés, ~2000 dossiers traités par jour."
-        }) }}
-    </div>
-</section>
+        {% for project in projects %}
+            {% set badge = project.category.name %}
+            {% set badgeClass =
+                project.category.slug == 'rpa' ? 'bg-primary' :
+                (project.category.slug == 'symfony-backend' ? 'bg-secondary' :
+                (project.category.slug == 'ia-rag' ? 'bg-warning text-dark' : 'bg-secondary'))
+            %}
 
-<section class="mb-5">
-    <h2 class="h4 mb-3">Projets Symfony / backend</h2>
-    <div class="row g-4">
-        {{ include('components/_project_card.html.twig', {
-            badge: 'PHP · Symfony 7.4',
-            badgeClass: 'bg-secondary',
-            title: 'Portfolio développeur PHP / Symfony & RPA',
-            context: "Contexte : besoin de présenter clairement mon profil, mes compétences et mes projets sur un site moderne et maintenable.",
-            solution: "Application Symfony 7.4 structurée (pages publiques, mise en avant des compétences RPA/backend, section projets, formulaire de contact).",
-            impact: "Démontre mes compétences techniques (Symfony, RPA, automation, IA) et ma capacité à concevoir un site propre et évolutif.",
-            highlight: "Support concret pour mes candidatures / missions."
-        }) }}
-    </div>
-</section>
-
-<section>
-    <h2 class="h4 mb-3">Projets IA / RAG</h2>
-    <div class="row g-4">
-        {{ include('components/_project_card.html.twig', {
-            badge: 'IA · RAG · Mistral',
-            badgeClass: 'bg-warning text-dark',
-            title: 'Interface IA avec RAG en Python/Django',
-            context: "Contexte : besoin d’exploiter un modèle Mistral avec du contexte métier issu de données locales.",
-            solution: "Application web Python/Django intégrant un modèle Mistral, couplé à un système RAG pour enrichir les réponses avec des documents stockés en local (chargement, indexation, récupération contextuelle).",
-            impact: "Réponses plus pertinentes et contextualisées, adaptées à un domaine métier spécifique, sans exposer les données sensibles.",
-            highlight: "Montre ma capacité à combiner IA, RAG et développement web."
-        }) }}
+            {{ include('components/_project_card.html.twig', {
+                badge: badge,
+                badgeClass: badgeClass,
+                title: project.title,
+                context: project.context,
+                solution: project.solution,
+                impact: project.impact,
+                highlight: project.highlight
+            }) }}
+        {% else %}
+            <p class="text-muted">Aucun projet n’est encore enregistré.</p>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}

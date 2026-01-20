@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Form\ContactType;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\ProjectRepository;
+
 
 class SiteController extends AbstractController
 {
@@ -17,9 +19,14 @@ class SiteController extends AbstractController
     }
 
     #[Route('/projets', name: 'app_projects')]
-    public function projects(): Response
+    public function projects(ProjectRepository $projectRepository): Response
     {
-        return $this->render('site/projects.html.twig');
+    $projects = $projectRepository->findBy([], ['createdAt' => 'DESC']);
+
+
+    return $this->render('site/projects.html.twig', [
+        'projects' => $projects,
+    ]);
     }
 
     #[Route('/competences', name: 'app_skills')]
